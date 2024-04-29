@@ -106,9 +106,10 @@ nav a:first-of-type {
 			onSubmit() {
         try {
           axios
-          .post("/api", { text: this.testInput })
+          .get("/api/attendance")
           .then((response) => {
             this.result = response.data.result;
+            console.log('response', response)
           }, (error) => {
             throw error || new Error(`Request failed`);
           })
